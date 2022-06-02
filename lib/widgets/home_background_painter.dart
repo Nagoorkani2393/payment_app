@@ -9,14 +9,14 @@ class HomeBackgroundPainter extends CustomPainter{
     final Path path = Path();
     path.moveTo(0, 0);
     path.lineTo(size.width, 0);
-    path.lineTo(size.width, size.height - 40);
+    path.lineTo(size.width, size.height - 150);
     path.quadraticBezierTo(
-        size.width, size.height - 20,
-        size.width - 20, size.height - 20);
-    path.lineTo(20, size.height - 20);
+        size.width, size.height - 60,
+        size.width - 60, size.height - 60);
+    path.lineTo(60, size.height - 60);
     path.quadraticBezierTo(
-        0, size.height - 20, 0, size.height);
-    path.lineTo(0, size.height);
+        0, size.height -40, 0, size.height);
+    // path.lineTo(0, size.height);
     path.close();
 
     final Paint paint = Paint()..color = backgroundColor

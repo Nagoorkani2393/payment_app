@@ -22,7 +22,7 @@ class _RootAppState extends State<RootApp> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        fontFamily: 'Lato',
       ),
       home: Scaffold(
         body: _pages().elementAt(_selectedIndex),
