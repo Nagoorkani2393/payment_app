@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:payment_app/constants/app_text.dart';
+
 import '../constants/app_colors/app_colors.dart';
 import '../constants/style.dart';
 import '../widgets/home_background_painter.dart';
@@ -9,12 +11,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      color: AppColors.secondaryColor,
       width: double.infinity,
       height: double.infinity,
       child: SingleChildScrollView(
         physics: const ClampingScrollPhysics(),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
@@ -27,7 +31,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  top: 50.0,
+                  top: 80.0,
                     left: 20.0,
                     right: 20.0,
                     child: Column(
@@ -43,10 +47,21 @@ class HomePage extends StatelessWidget {
                         const SizedBox(height: 50.0,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
-                            Text("\$4000.0",
-                              style: Style.headingText,),
-                            Icon(Icons.add_chart, color: Colors.white,),
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text("Account Balance",
+                                  style: Style.subText,),
+                                const SizedBox(height: 8.0,)
+,                                Text("\$4000.0",
+                                  style: Style.headingText.copyWith(
+                                    fontSize: AppFont.size_38
+                                  ),),
+                                ],
+                            ),
+                            const Icon(Icons.add_chart, color: Colors.white,),
                           ],
                         ),
                       ],
@@ -103,11 +118,69 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Container(
-              height: 150,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                  child: Text("Send Money", style: Style.headingText.copyWith(
+                    color: AppColors.primaryColor
+                  ),),
+                ),
+                const SizedBox(height: 8.0,),
+                SizedBox(
+                  width: double.infinity,
+                  height: 80.0,
+                  child: ListView.builder(
+                    padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                    scrollDirection: Axis.horizontal,
+                      itemCount: 10, itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: Container(
+                            width: 80.0,
+                            height: 80.0,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: AppColors.primaryColor,
+                            ),
+                          ),
+                        );
+                  }),
+                )
+              ],
             ),
-            Container(
-              height: 450,
+            const SizedBox(height: 24.0,),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                  child: Text("Quick Payment", style: Style.headingText.copyWith(
+                      color: AppColors.primaryColor
+                  ),),
+                ),
+                const SizedBox(height: 8.0,),
+                SizedBox(
+                  width: double.infinity,
+                  height: 200.0,
+                  child: ListView.builder(
+                      padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 10, itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Container(
+                        width: 150.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.0),
+                          color: AppColors.primaryColor,
+                        ),
+                      ),
+                    );
+                  }),
+                )
+              ],
             ),
           ],
         ),

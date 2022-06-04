@@ -16,6 +16,11 @@ class AppFont{
   static const double size_16 = 16.0;
   static const double size_18 = 18.0;
   static const double size_20 = 20.0;
+  static const double size_24 = 24.0;
+  static const double size_32 = 32.0;
+  static const double size_38 = 38.0;
+  static const double size_42 = 42.0;
+  static const double size_46 = 46.0;
 
   static const Color colorWhite = Color(0xFFFFFFFF);
   static const Color colorBlack = Color(0xFF000000);
